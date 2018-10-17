@@ -1,6 +1,5 @@
 package com.spades.of.ace.wodeblog.rest.controller;
 
-import com.spades.of.ace.wodeblog.misc.Helpers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,12 +26,12 @@ public class About extends Controller {
         final String[] addressQuestions = {"I live in", "J'habite à", "Ich lebe in", "Vivo en", "我家在"};
         final String[] addressAnswers = {"Shenzhen, China", "深圳，中国"};
 
-        model.put("jobQuestions", Helpers.arrayToJsonString(jobQuestions));
-        model.put("jobAnswers", Helpers.arrayToJsonString(jobAnswers));
-        model.put("countryQuestions", Helpers.arrayToJsonString(countryQuestions));
-        model.put("countryAnswers", Helpers.arrayToJsonString(countryAnswers));
-        model.put("addressQuestions", Helpers.arrayToJsonString(addressQuestions));
-        model.put("addressAnswers", Helpers.arrayToJsonString(addressAnswers));
+        model.put("jobQuestions", jobQuestions);
+        model.put("jobAnswers", jobAnswers);
+        model.put("countryQuestions", countryQuestions);
+        model.put("countryAnswers", countryAnswers);
+        model.put("addressQuestions", addressQuestions);
+        model.put("addressAnswers", addressAnswers);
         model.put("nameQuestion", nameQuestions[(int) ((Math.random() * ((4 - 0) + 1)) + 0)]);
         model.put("jobQuestion", jobQuestions[(int) ((Math.random() * ((4 - 0) + 1)) + 0)]);
         model.put("jobAnswer", jobAnswers[(int) ((Math.random() * ((4 - 0) + 1)) + 0)]);

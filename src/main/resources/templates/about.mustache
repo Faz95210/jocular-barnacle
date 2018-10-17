@@ -1,21 +1,79 @@
 {{>header}}
 
+<script>
+
+    function changeLanguage(language) {
+        switch (language) {
+            case 0:
+                console.log("English");
+                $('#job-question').text("{{jobQuestions.0}}");
+                $('#job-answer').text("{{jobAnswers.0}}");
+                $('#country-answer').text("{{countryAnswers.0}}");
+                $('#country-question').text("{{countryQuestions.0}}");
+                $('#address-answer').text("{{addressAnswers.0}}");
+                $('#address-question').text("{{addressQuestions.0}}");
+                break;
+            case 1:
+                console.log("French");
+                $('#job-question').text("{{jobQuestions.1}}");
+                $('#job-answer').text("{{jobAnswers.1}}");
+                $('#country-answer').text("{{countryAnswers.1}}");
+                $('#country-question').text("{{countryQuestions.1}}");
+                $('#address-answer').text("{{addressAnswers.0}}");
+                $('#address-question').text("{{addressQuestions.1}}");
+                break;
+            case 2:
+                console.log("German");
+
+                $('#job-question').text("{{jobQuestions.2}}");
+                $('#job-answer').text("{{jobAnswers.2}}");
+                $('#country-answer').text("{{countryAnswers.2}}");
+                $('#country-question').text("{{countryQuestions.2}}");
+                $('#address-answer').text("{{addressAnswers.0}}");
+                $('#address-question').text("{{addressQuestions.2}}");
+                break;
+            case 3:
+                console.log("spanish");
+
+                $('#job-question').text("{{jobQuestions.3}}");
+                $('#job-answer').text("{{jobAnswers.3}}");
+                $('#country-answer').text("{{countryAnswers.3}}");
+                $('#country-question').text("{{countryQuestions.3}}");
+                $('#address-answer').text("{{addressAnswers.0}}");
+                $('#address-question').text("{{addressQuestions.3}}");
+                break;
+            case 4:
+                console.log("Chinese");
+                $('#job-question').text("{{jobQuestions.4}}");
+                $('#job-answer').text("{{jobAnswers.4}}");
+                $('#country-question').text("{{countryAnswers.4}}");
+                $('#country-answer').text("{{countryQuestions.4}}");
+                $('#address-answer').text("{{addressAnswers.1}}");
+                $('#address-question').text("{{addressQuestions.4}}");
+                break;
+            default:
+                break;
+        }
+
+    }
+</script>
+
 <nav class="level">
     <div class="level-left">
         <div class="level-item button">
-            <img width="20px" alt="gb" src="/img/flags/fr.svg" onclick="changeLanguage('english')"/>
+            <img width="20px" alt="gb" src="/img/flags/gb.svg" onclick="changeLanguage(0)"/>
         </div>
         <div class="level-item button">
-            <img width="20px" alt="fr" src="/img/flags/fr.svg" onclick="changeLanguage('french')"/>
+            <img width="20px" alt="fr" src="/img/flags/fr.svg" onclick="changeLanguage(1)"/>
         </div>
         <div class="level-item button">
-            <img width="20px" alt="es" src="/img/flags/es.svg" onclick="changeLanguage('spanish')"/>
+            <img width="20px" alt="es" src="/img/flags/es.svg" onclick="changeLanguage(3)"/>
         </div>
         <div class="level-item button">
-            <img width="20px" alt="cn" src="/img/flags/ch.svg" onclick="changeLanguage('chinese')"/>
+            <img width="20px" alt="cn" src="/img/flags/ch.svg" onclick="changeLanguage(4)"/>
         </div>
         <div class="level-item button">
-            <img width="20px" alt="de" src="/img/flags/de.svg" onclick="changeLanguage('german')"/>
+            <img width="20px" alt="de" src="/img/flags/de.svg" onclick="changeLanguage(2)"/>
         </div>
     </div>
 </nav>
@@ -24,45 +82,28 @@
         <div class="tile is-vertical is-8">
             <div class="tile is-parent is-vertical">
                 <article class="tile is-child notification is-primary">
-                    <p class="subTitle">{{nameQuestion}}</p>
+                    <p class="subTitle" id="name-question">{{nameQuestion}}</p>
                     <p class="title">Fawzi Bedidi</p>
                 </article>
                 <article class="tile is-child notification is-warning">
-                    <p class="title">{{jobQuestion}}</p>
-                    <p class="subTitle">{{jobAnswer}}</p>
+                    <p class="title" id="job-question">{{jobQuestion}}</p>
+                    <p class="subTitle" id="job-answer">{{jobAnswer}}</p>
                 </article>
             </div>
         </div>
         <div class="tile is-parent is-horizontal is-5">
             <div class="tile is-horizontal">
                 <article class="tile is-child notification is-danger">
-                    <p class="subTitle">{{countryQuestion}}</p>
-                    <p class="title">{{countryAnswer}}</p>
+                    <p class="subTitle" id="country-question">{{countryQuestion}}</p>
+                    <p class="title" id="country-answer">{{countryAnswer}}</p>
                 </article>
                 <article class="tile is-child notification is-success">
-                    <p class="title">{{addressQuestion}}</p>
-                    <p class="subTitle">{{addressAnswer}}</p>
+                    <p class="title" id="address-question">{{addressQuestion}}</p>
+                    <p class="subTitle" id="address-answer">{{addressAnswer}}</p>
                 </article>
             </div>
         </div>
     </div>
 </section>
 
-<script>
-    const jobQuestions = {{jobQuestions}};
-    const jobAnswers = {{jobAnswers}};
-    const countryQuestions = {{countryQuestions}};
-    const countryAnswers = {{countryAnswers}};
-    const addressQuestions = {{addressQuestion}};
-    const addressAnswers = {{addressAnswer}};
-
-    function changeLanguage(language) {
-        console.log(jobQuestions);
-        // console.log(jobQuestions[0]);
-        // console.log(countryAnswers[0]);
-        // console.log(countryQuestions[0]);
-        // console.log(addressAnswers[0]);
-        // console.log(addressQuestions[0]);
-    }
-</script>
 {{>footer}}

@@ -1,18 +1,21 @@
 package com.spades.of.ace.wodeblog.misc;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonParser;
-
-import java.util.Collection;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Helpers {
 
-    public static final JsonParser jsonParser = new JsonParser();
+    private static final ObjectMapper om = new ObjectMapper();
 
 
-    public static String arrayToJsonString(final Object[] array) {
-        return new Gson().toJson(array);
-    }
+
+
+    public static String arrayToJsonString(final Object object) {
+        String result = "";
+        try {
+            result = om.writerWithDefaultPrettyPrinter().writeValueAsString(object);
+        } catch (JsonProcessingException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;    }
 }
