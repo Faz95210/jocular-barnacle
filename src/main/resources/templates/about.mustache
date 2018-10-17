@@ -1,0 +1,68 @@
+{{>header}}
+
+<nav class="level">
+    <div class="level-left">
+        <div class="level-item button">
+            <img width="20px" alt="gb" src="/img/flags/fr.svg" onclick="changeLanguage('english')"/>
+        </div>
+        <div class="level-item button">
+            <img width="20px" alt="fr" src="/img/flags/fr.svg" onclick="changeLanguage('french')"/>
+        </div>
+        <div class="level-item button">
+            <img width="20px" alt="es" src="/img/flags/es.svg" onclick="changeLanguage('spanish')"/>
+        </div>
+        <div class="level-item button">
+            <img width="20px" alt="cn" src="/img/flags/ch.svg" onclick="changeLanguage('chinese')"/>
+        </div>
+        <div class="level-item button">
+            <img width="20px" alt="de" src="/img/flags/de.svg" onclick="changeLanguage('german')"/>
+        </div>
+    </div>
+</nav>
+<section class="section">
+    <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+            <div class="tile is-parent is-vertical">
+                <article class="tile is-child notification is-primary">
+                    <p class="subTitle">{{nameQuestion}}</p>
+                    <p class="title">Fawzi Bedidi</p>
+                </article>
+                <article class="tile is-child notification is-warning">
+                    <p class="title">{{jobQuestion}}</p>
+                    <p class="subTitle">{{jobAnswer}}</p>
+                </article>
+            </div>
+        </div>
+        <div class="tile is-parent is-horizontal is-5">
+            <div class="tile is-horizontal">
+                <article class="tile is-child notification is-danger">
+                    <p class="subTitle">{{countryQuestion}}</p>
+                    <p class="title">{{countryAnswer}}</p>
+                </article>
+                <article class="tile is-child notification is-success">
+                    <p class="title">{{addressQuestion}}</p>
+                    <p class="subTitle">{{addressAnswer}}</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const jobQuestions = {{jobQuestions}};
+    const jobAnswers = {{jobAnswers}};
+    const countryQuestions = {{countryQuestions}};
+    const countryAnswers = {{countryAnswers}};
+    const addressQuestions = {{addressQuestion}};
+    const addressAnswers = {{addressAnswer}};
+
+    function changeLanguage(language) {
+        console.log(jobQuestions);
+        // console.log(jobQuestions[0]);
+        // console.log(countryAnswers[0]);
+        // console.log(countryQuestions[0]);
+        // console.log(addressAnswers[0]);
+        // console.log(addressQuestions[0]);
+    }
+</script>
+{{>footer}}
